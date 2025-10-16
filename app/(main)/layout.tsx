@@ -1,4 +1,4 @@
-// import Footer from "@/components/Footer";
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import React from "react";
 
@@ -12,7 +12,7 @@ const layout = ({
       <Navbar />
       <>{children}</>
       {/* Footer */}
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
