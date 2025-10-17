@@ -54,8 +54,15 @@ export default async function logoutAction() {
     (await cookieStore).set("user_identifier", "", { maxAge: 0 });
 
     return { message: "Logout successful." };
+    // } catch (err) {
+    //   console.error("Error during logout:", err);
+    //   throw new Error("An error occurred while logging out. Please try again.");
+    // }
   } catch (err) {
-    console.error("Error during logout:", err);
-    throw new Error("An error occurred while logging out. Please try again.");
+    console.error("REAL LOGOUT ERROR:", err);
+    return {
+      message: "Logout failed. Something went wrong.",
+      error: String(err),
+    };
   }
 }

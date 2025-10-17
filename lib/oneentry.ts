@@ -18,7 +18,11 @@ let apiClient: ApiClientType = null;
  */
 async function setupApiClient(): Promise<ReturnType<typeof defineOneEntry>> {
   // Retrieve the API URL from environment variables
-  const apiUrl = process.env.ONEENTRY_PROJECT_URL;
+  const apiUrl = process.env.NEXT_PUBLIC_ONEENTRY_PROJECT_URL;
+  console.log(
+    "ONEENTRY_PROJECT_URL loaded:",
+    process.env.NEXT_PUBLIC_ONEENTRY_PROJECT_URL
+  );
 
   // Throw an error if the API URL is not defined
   if (!apiUrl) {
@@ -30,10 +34,15 @@ async function setupApiClient(): Promise<ReturnType<typeof defineOneEntry>> {
     try {
       // Retrieve the refresh token (if available) from storage
       const refreshToken = await retrieveRefreshToken(String(apiUrl));
+      console.log("Retrieved refresh token:", refreshToken);
+      console.log(
+        "NEXT_PUBLIC_ONEENTRY_TOKEN loaded:",
+        process.env.NEXT_PUBLIC_ONEENTRY_TOKEN
+      );
 
       // Create a new instance of the API client with the required configuration
       apiClient = defineOneEntry(apiUrl, {
-        token: process.env.ONEENTRY_TOKEN, // Token for authentication
+        token: process.env.NEXT_PUBLIC_ONEENTRY_TOKEN, // Token for authentication
         langCode: "en_US", // Language code for the API
         auth: {
           refreshToken: refreshToken || undefined, // Use the retrieved refresh token or `undefined`
