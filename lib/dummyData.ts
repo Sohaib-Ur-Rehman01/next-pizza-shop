@@ -439,6 +439,78 @@ export const dummyProducts: IProductsEntity[] = [
     categories: ["specialty-pizzas"],
     isVisible: true,
   },
+  {
+    id: 7,
+    localizeInfos: {
+      title: "Beef Cheese Pizza",
+      menuTitle: "Beef Cheese",
+      htmlContent: "",
+      plainContent: "",
+    },
+    statusIdentifier: "in_stock",
+    statusLocalizeInfos: { en_US: { title: "In stock" } },
+    attributeSetIdentifier: "default",
+    moduleFormConfigs: [],
+    position: 3,
+    templateIdentifier: null,
+    shortDescTemplateIdentifier: null,
+    price: 15.5,
+    additional: { prices: { min: 15.5, max: 15.5 } },
+    sku: "4CH-001",
+    isSync: true,
+    attributeValues: {
+      p_title: {
+        type: "string",
+        value: "Four Cheese Pizza",
+        position: 0,
+        additionalFields: [],
+      },
+      p_description: {
+        type: "html",
+        value: [
+          { htmlValue: "Mozzarella, Parmesan, Gorgonzola, Ricotta,Beef" },
+        ],
+        position: 1,
+        additionalFields: [],
+      },
+      p_price: {
+        type: "number",
+        value: 18.5,
+        position: 2,
+        additionalFields: [],
+      },
+      p_image: {
+        type: "file",
+        value: {
+          downloadLink:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgjyPZdku4nqdXZylja8lKOyzNuCCc8btBsw&s",
+        },
+        position: 3,
+        additionalFields: [],
+      },
+      p_available: {
+        type: "list",
+        value: [{ title: "Available" }],
+        position: 4,
+        additionalFields: [],
+      },
+      p_stock: { type: "number", value: 8, position: 5, additionalFields: [] },
+      p_ingredients: {
+        type: "string",
+        value: "Mozzarella, Parmesan, Gorgonzola, Ricotta",
+        position: 6,
+        additionalFields: [],
+      },
+      p_calories: {
+        type: "number",
+        value: 850,
+        position: 7,
+        additionalFields: [],
+      },
+    },
+    categories: ["classic-pizzas"],
+    isVisible: true,
+  },
 ];
 
 export const dummyCatalogs: IPagesEntity[] = [

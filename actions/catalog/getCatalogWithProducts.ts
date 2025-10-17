@@ -67,10 +67,22 @@ export const getCatalogWithProducts = async () => {
   } else {
     console.log("No catalogs found");
     // Return dummy data structure if no catalogs found
+    // return dummyCatalogs.map((catalog) => ({
+    //   ...catalog,
+    //   catalogProducts: {
+    //     items: dummyProducts.slice(0, 4),
+    //   },
+    // }));
     return dummyCatalogs.map((catalog) => ({
       ...catalog,
       catalogProducts: {
-        items: dummyProducts.slice(0, 4),
+        items: dummyProducts
+          .filter(
+            (product) =>
+              product.categories?.includes(catalog.pageUrl) ||
+              catalog.pageUrl === "classic-pizzas"
+          )
+          .slice(0, 4),
       },
     }));
   }
